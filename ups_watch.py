@@ -17,10 +17,10 @@ def get_ups_stats():
         command = ['upsc', 'cyberpower@10.0.3.8', str(entry.replace("_", "."))]
         ups_stats[entry] = subprocess.run(command, capture_output=True, text=True).stdout.strip()
 
-def write_log(data):
+def write_log():
     """Write data to log."""
     with open(LOG_PATH, "a") as log:
-        log.write(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n{ups_stats}')
+        log.write(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n{ups_stats}\n')
 
 def print_stats():
     """Print the current UPS stats to console."""
@@ -29,4 +29,5 @@ def print_stats():
 
 if __name__ == '__main__':
     get_ups_stats()
+    write_log()
     print_stats()
