@@ -30,4 +30,4 @@ def print_stats():
 if __name__ == '__main__':
     get_ups_stats()
     write_log()
-    print_stats()
+    # print_stats()
