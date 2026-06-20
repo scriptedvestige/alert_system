@@ -20,7 +20,7 @@ def get_ups_stats():
 def write_log():
     """Write data to log."""
     with open(LOG_PATH, "a") as log:
-        log.write(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n{ups_stats}\n')
+        log.write(f'{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - {ups_stats}\n')
 
 def print_stats():
     """Print the current UPS stats to console."""
